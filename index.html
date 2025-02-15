@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Nghi iu</title>
+    <style>
+      body {
+          margin: 0;
+          overflow: hidden;
+          background-color: #ffdde1;
+          text-align: center;
+          font-family: 'Roboto', sans-serif;
+      }
+      .heart {
+          position: absolute;
+          color: red;
+          font-size: 24px;
+          animation: floatUp 3s linear infinite;
+      }
+      @keyframes floatUp {
+          0% {
+              transform: translateY(0) scale(1);
+              opacity: 1;
+          }
+          100% {
+              transform: translateY(-100vh) scale(0.5);
+              opacity: 0;
+          }
+      }
+      .final-message {
+          margin-top: 20px;
+          font-size: 20px;
+          cursor: pointer;
+      }
+  </style>
+  </head>
+  <body>
+    <main class="container">
+      <img class="cat-img" src="img/cat-0.jpg" alt="Picture of a cat" />
+      <p class="title">❤️NGUYỄN MINH NGHI❤️ <br>💘Em làm người yêu anh nha😤😘💘 </p>
+      <audio id="audioPlayer" src="./ghemoi.mp3" autoplay></audio>
+      <div class="buttons">
+        <button type="button" class="btn btn--yes">Dé</button>
+        <button type="button" class="btn btn--no">Hg</button>
+      </div>
+      <script>
+        
+        // Floating hearts effect
+        function createHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                document.body.appendChild(heart);
+                
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.bottom = '-10px';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 3000);
+            }
+            setInterval(createHeart, 300);
+    </script>
+    </main>
+    
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
